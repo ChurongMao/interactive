@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	    <title>responsive</title>
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+
+	div.wrapper{width: 100vw; height: 100vh; display: flex; flex-wrap: wrap;}
+	div.wrapper>div{mix-blend-mode: difference;}
+	div.pointer{
+		font-family: sans-serif;
+		position: fixed;
+		right: 10px;
+		bottom: 50vh;
+		font-size: 100px;
+		z-index: 1;
+	}
+
+	span{display: none;} 
+	div.pointer:hover span{display: inline;}
+
+	div.back{
+		display: none;
+		font-family: sans-serif;
+		position: fixed;
+		bottom: 50vh;
+		font-size: 100px;
+		mix-blend-mode: luminosity;
+		z-index: 1;
+	}
+	a:visited{
+		color: blue;
+	}
+	#one{
+		height: 100vh;
+		width: 400px;
+		position: absolute;
+		left: 100px;
+		background-color: yellow;
+		animation-name: one;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
+		@media screen and (max-width: 600px){
+			div.pointer{display: none;}
+			div.back{display: inline-block;}
+			@keyframes one{
+				0%{left: 100px}
+				50%{left: 0px}
+				100%{left: 100px}
+			}
+		}
+
+	#two{
+		height: 100vh;
+		width: 200px;
+		position: absolute;
+		left: 600px;
+		background-color: magenta;
+		animation-name: two;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+	}
+		@media screen and (max-width: 900px){
+			@keyframes two{
+				0%{left: 600px}
+				50%{left: 0px}
+				100%{left: 600px}
+			}
+		}
+
+	#three{
+		height: 100vh;
+		width: 100px;
+		position: absolute;
+		left: 900px;
+		background-color: red;
+		animation-name: three;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+		@media screen and (max-width: 1100px){
+			@keyframes three{
+				0%{left: 900px}
+				50%{left: 0px}
+				100%{left: 900px}
+			}
+		}
+
+	#four{
+		height: 100vh;
+		width: 50px;
+		position: relative;
+		left: 1100px;
+		background-color: lime;
+		animation-name: four;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+	}
+		@media screen and (max-width: 1250px){
+			@keyframes four{
+				0%{left: 1100px}
+				50%{left: 0px}
+				100%{left: 1100px}
+			}
+		}
+
+	#five{
+		height: 100vh;
+		width: 10px;
+		position: absolute;
+		left: 1250px;
+		background-color: blue;
+		animation-name: five;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+	}
+		@media screen and (max-width: 1360px){
+			@keyframes five{
+				0%{left: 1250px}
+				50%{left: 0px }
+				100%{left: 1250px}
+			}
+		}
+
+
+
+	    </style> 
+	</head>
+
+	<body>
+	<div class='pointer'><span>Resize the Window</span>👈</div>
+	<div class="back"><a href="http://www.churongmao.com/">Back</a></div>
+
+	<div class="wrapper">
+
+		<div id="one"></div>
+		<div id="two"></div>
+		<div id="three"></div>
+		<div id="four"></div>
+		<div id='five'></div>
+	</div>
+
+ <script type="text/javascript">
+  console.log("Hello World");
+ </script>
+		
+
+	</body>
+</html>
+
+
+
+
+
+
+
