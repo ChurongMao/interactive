@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>clock</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<style>
+			body{
+			font-family: monospace;
+			}
+			div.container{
+				 position: relative;
+				 font-size: 18px;
+			}
+			img{
+				height: 100vh;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%);
+			}
+			div.about{
+				position: fixed;
+				top: 10px;
+				right: 20vw;
+			}
+			div.name{
+				position: fixed;
+				bottom: 50px;
+				left: 50%;
+				transform: translate(-50%);
+				text-align: center;
+			}
+		</style>
+		<script src="jquery-3.4.1.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<img src="" id="img">
+			<div class="name">
+				<div class="time"></div>
+				<div id="person"></div>
+			</div>
+		</div>
+		<div class="about">about</div>
+		
+		<script>
+			function getCurrentTimeString(){
+				let currentTime = new Date();
+				let currentHours = currentTime.getHours();
+				let currentMinutes = currentTime.getMinutes();
+				if (currentHours > 12) {currentHours -=12}
+				if (currentHours < 10) {currentHours = '0' + currentHours}
+				if (currentMinutes < 10) {currentMinutes = '0' + currentMinutes}
+				let dateString = currentHours + ":" + currentMinutes;
+				$('.time').text(dateString);				
+			}
+
+			function setupClock(){
+				getCurrentTimeString();
+				setInterval(getCurrentTimeString, 1000);
+			}
+
+			function getImage(){
+
+				var currentTime = new Date();
+				var currentHours = currentTime.getHours();
+				var currentMinutes = currentTime.getMinutes();
+				if (currentHours > 12) {currentHours -=12}
+				if (currentHours < 10) {currentHours = '0' + currentHours}
+				if (currentMinutes < 10) {currentMinutes = '0' + currentMinutes}
+				var dateString = currentHours + ":" + currentMinutes;
+				
+				if (dateString == '01:25') {
+					document.getElementById('img').src ='image/01.25_Mengjie Liu.jpg'
+					document.getElementById('person').innerHTML = 'Mengjie Liu'
+				}
+				if (dateString == '03:03') {
+					document.getElementById('img').src ='image/03.03_Alvin Ashiatey.jpg'
+					document.getElementById('person').innerHTML = 'Alvin Ashiatey'
+				}
+				if (dateString == '03:55') {
+					document.getElementById('img').src ='image/03.55_Mengyi Qian.jpg'
+					document.getElementById('person').innerHTML = 'Mengyi Qian'
+				}					
+				if (dateString == '04:00') {
+					document.getElementById('img').src ='image/04.00_Yuan Gao.jpg'
+					document.getElementById('person').innerHTML = 'Yuan Gao'
+				}				
+				if (dateString == '05:07') {
+					document.getElementById('img').src ='image/05.07_Hannah Tjaden.jpg'
+					document.getElementById('person').innerHTML = 'Hannah Tjaden'
+				}
+				if (dateString == '07:45') {
+					document.getElementById('img').src ='image/07.45_Nick Massarelli.jpg'
+					document.getElementById('person').innerHTML = 'Nick Massarelli'
+				}
+				if (dateString == '11:40') {
+					document.getElementById('img').src ='image/11.40_Avery Youngblood.jpg'
+					document.getElementById('person').innerHTML = 'Avery Youngblood'
+				}
+
+
+
+
+			}
+
+			/*function getImage(){
+				if (dateString = '09:37') {
+					$('img').src('image/05.07_Hannah Tjaden.jpg')
+					$('.person').text('Hannah Tjaden')
+				}
+			}*/
+
+			setupClock();
+			getImage();
+
+		</script>
+	</body>
+</html>
