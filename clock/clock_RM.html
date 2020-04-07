@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mind clock</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      body {
+        font-family: monospace;
+        font-size: 18px;
+      }
+      div.container {
+        position: relative;
+      }
+      img {
+        height: 100vh;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      div.about {
+        position: fixed;
+        text-decoration: underline;
+        top: 10px;
+        left: 66vw;
+      }
+
+      div.about_content {
+        display: none;
+        position: absolute;
+        width: 30vw;
+        z-index: 1;
+      }
+      div.about:hover .about_content{
+        display: block;
+      }
+
+      div.name {
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+      }
+      a:visited{
+        color: black;
+      }
+
+    </style>
+
+    <!--    google's hosted jquery library  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <img src=" " id="img" />
+      <div class="name">
+        <div class="time"></div>
+        <div id="person"></div>
+      </div>
+    </div>
+
+    <div class="about">
+        <span>about</span>
+        <div class="about_content">
+          <p>This is an assignment about ‘clock’.
+          <br> when I review my notes of ideas, I found several clocks I drew, some as a sketch for an idea, else just as an abbreviation for the word ‘clock’. I drew them arbitrarily, without consideration of time. But unexpectedly, they all pointed to 2 o’clock. I wonder why I’m partial to 2 o’clock, is my mind live at this lasting moment? So I ask people to draw me a clock, then name the time they drew after them. Every minute, you may meet a person whose ‘mind clock’ was set to that moment.</br></p>
+          <div>You can also <a href="view all the clocks.html">view all the clocks here.</a></div><p></p><p></p><p></p>
+        </div>
+      </div>
+
+    <script>
+
+    	// I declared a few global variables. That way you don't have to figure out the time twice. Just once.
+      var currentTime;
+      var currentHours;
+      var currentMinutes;
+      var dateString;
+
+      function getCurrentTimeString() {
+        currentTime = new Date();
+        currentHours = currentTime.getHours();
+        currentMinutes = currentTime.getMinutes();
+
+        if (currentHours > 12) {
+          currentHours -= 12;
+        }
+        if (currentHours < 10) {
+          currentHours = "0" + currentHours;
+        }
+        if (currentMinutes < 10) {
+          currentMinutes = "0" + currentMinutes;
+        }
+
+        dateString = currentHours + ":" + currentMinutes;
+        $(".time").text(dateString);
+
+        console.log(dateString);
+      }
+
+      function setupClock() {
+        getCurrentTimeString();
+        getImage();
+        setInterval(getCurrentTimeString, 1000);
+        // Here I added another setInterval for getImage. That way, every second, the page gets the time, and checks to see if it should display an image.
+        setInterval(getImage, 1000);
+      }
+
+      function getImage() {
+        if (currentHours > 12) {
+          currentHours -= 12;
+        }
+        if (currentHours < 10) {
+          currentHours = "0" + currentHours;
+        }
+        if (currentMinutes < 10) {
+          currentMinutes = "0" + currentMinutes;
+        }
+
+        if (dateString == "01:25") {
+          console.log("image");
+          document.getElementById("img").src = "image/01.25_Mengjie Liu.jpg";
+          document.getElementById("person").innerHTML = "Mengjie Liu";
+        }
+        if (dateString == "02:02") {
+          document.getElementById("img").src = "image/02.02_Wenwen Zhang.jpg";
+          document.getElementById("person").innerHTML = "Wenwen Zhang";
+        }
+        if (dateString == '03:00') {
+          document.getElementById('img').src ='image/03.00_Luiza Dale.jpg'
+          document.getElementById('person').innerHTML = 'Alvin Ashiatey'
+        }
+        if (dateString == '03:03') {
+          document.getElementById('img').src ='image/03.03_Alvin Ashiatey.jpg'
+          document.getElementById('person').innerHTML = 'Alvin Ashiatey'
+        }
+        if (dateString == '03:05') {
+          document.getElementById('img').src ='image/03.05_Vera Villanueva.jpg'
+          document.getElementById('person').innerHTML = 'Vera Villanueva'
+        }
+        if (dateString == '03:45') {
+          document.getElementById('img').src ='image/03.45_Yuanbo Wang.jpg'
+          document.getElementById('person').innerHTML = 'Yuanbo Wang'
+        }
+        if (dateString == '03:55') {
+          document.getElementById('img').src ='image/03.55_Mengyi Qian.jpg'
+          document.getElementById('person').innerHTML = 'Mengyi Qian'
+        }
+        if (dateString == '03:57') {
+          document.getElementById('img').src ='image/03.57_Qidong Xuan.jpg'
+          document.getElementById('person').innerHTML = 'Qidong Xuan'
+        }
+        if (dateString == '04:00') {
+          document.getElementById('img').src ='image/04.00_Sam Wood.jpg'
+          document.getElementById('person').innerHTML = 'Sam Wood'
+        }
+        if (dateString == '04:01') {
+          document.getElementById('img').src ='image/04.01_Yuan Gao.jpg'
+          document.getElementById('person').innerHTML = 'Yuan Gao'
+        }
+        if (dateString == '05:00') {
+          document.getElementById('img').src ='image/05.00_Yining Gong.jpg'
+          document.getElementById('person').innerHTML = 'Yining Gong'
+        }
+        if (dateString == '05:07') {
+          document.getElementById('img').src ='image/05.07_Tyler Bleuel.jpg'
+          document.getElementById('person').innerHTML = 'Tyler Bleuel'
+        }
+        if (dateString == '05:08') {
+          document.getElementById('img').src ='image/05.08_Hannah Tjaden.jpg'
+          document.getElementById('person').innerHTML = 'Hannah Tjaden'
+        }
+        if (dateString == '05:20') {
+          document.getElementById('img').src ='image/05.20_Mianwei Wang.jpg'
+          document.getElementById('person').innerHTML = 'Mianwei Wang'
+        }
+        if (dateString == '06:00') {
+          document.getElementById('img').src ='image/06.00_Jinu Hong.jpg'
+          document.getElementById('person').innerHTML = 'Jinu Hong'
+        }
+        if (dateString == '06:20') {
+          document.getElementById('img').src ='image/06.20_Tianci Zou.jpg'
+          document.getElementById('person').innerHTML = 'Tianci Zou'
+        }
+        if (dateString == '07:00') {
+          document.getElementById('img').src ='image/07.00_Cat Wentworth.jpg'
+          document.getElementById('person').innerHTML = 'Cat Wentworth'
+        }
+        if (dateString == '07:45') {
+          document.getElementById('img').src ='image/07.45_Nick Massarelli.jpg'
+          document.getElementById('person').innerHTML = 'Nick Massarelli'
+        }
+        if (dateString == '08:20') {
+          document.getElementById('img').src ='image/08.20_Kitty Kan.jpg'
+          document.getElementById('person').innerHTML = 'Kitty Kan'
+        }
+        if (dateString == '08:28') {
+          document.getElementById('img').src ='image/08.28_Xi Chen.jpg'
+          document.getElementById('person').innerHTML = 'Xi Chen'
+        }
+        if (dateString == '08:50') {
+          document.getElementById('img').src ='image/08.50_Tuan Pham.jpg'
+          document.getElementById('person').innerHTML = 'Tuan Pham'
+        }
+        if (dateString == '10:05') {
+          document.getElementById('img').src ='image/10.05_Herdimas Anggara.jpg'
+          document.getElementById('person').innerHTML = 'Herdimas Anggara'
+        }
+        if (dateString == '10:06') {
+          document.getElementById('img').src ='image/10.06_Hao Xu.jpg'
+          document.getElementById('person').innerHTML = 'Hao Xu'
+        }
+        if (dateString == '10:10') {
+          document.getElementById('img').src ='image/10.10_Tantan Wang.jpg'
+          document.getElementById('person').innerHTML = 'Tantan Wang'
+        }
+        if (dateString == '11:40') {
+          document.getElementById('img').src ='image/11.40_Avery Youngblood.jpg'
+          document.getElementById('person').innerHTML = 'Avery Youngblood'
+        }
+        if (dateString == '12:15') {
+          document.getElementById('img').src ='image/12.15_Sophie Zhang.jpg'
+          document.getElementById('person').innerHTML = 'Sophie Zhang'
+        }
+        if (dateString == '12:23') {
+          document.getElementById('img').src ='image/12.23_M.C. Madrigal.jpg'
+          document.getElementById('person').innerHTML = 'M.C. Madrigal'
+        }
+        if (dateString == '12:28') {
+          document.getElementById('img').src ='image/12.28_Monique Baltzer.jpg'
+          document.getElementById('person').innerHTML = 'Monique Baltzer'
+        }
+ 
+ 		// I added this else clause here. Basically, if the dateString does not match one of your specified times, it clears the image and the name to take it away.
+        else {
+          document.getElementById("img").src =
+            " ";
+          document.getElementById("person").innerHTML = " ";
+        }
+      }
+
+      setupClock();
+    </script>
+  </body>
+</html>
