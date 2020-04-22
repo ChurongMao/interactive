@@ -21,16 +21,19 @@
       }
       div.about {
         position: fixed;
-        text-decoration: underline;
         top: 10px;
         left: 66vw;
+        /*border: 1px solid black;*/
+        cursor: pointer;
+        /*padding: 5px;*/
       }
 
       div.about_content {
         display: none;
-        position: absolute;
+        position: relative;
         width: 30vw;
         z-index: 1;
+
       }
       div.about:hover .about_content{
         display: block;
@@ -55,7 +58,7 @@
 
   <body>
     <div class="container">
-      <img src=" " id="img" />
+      <img src="image/error.png" id="img" >
       <div class="name">
         <div class="time"></div>
         <div id="person"></div>
@@ -63,17 +66,16 @@
     </div>
 
     <div class="about">
-        <span>about</span>
+        <span style="text-decoration: underline;">about</span>
         <div class="about_content">
-          <p>This is an assignment about ‘clock’.
-          <br> when I review my notes of ideas, I found several clocks I drew, some as a sketch for an idea, else just as an abbreviation for the word ‘clock’. I drew them arbitrarily, without consideration of time. But unexpectedly, they all pointed to 2 o’clock. I wonder why I’m partial to 2 o’clock, is my mind live at this lasting moment? So I ask people to draw me a clock, then name the time they drew after them. Every minute, you may meet a person whose ‘mind clock’ was set to that moment.</br></p>
+          <p> when I review my notes of ideas, I found several clocks I drew, some as a sketch for an idea, else just as an abbreviation for the word ‘clock’. I drew them arbitrarily, without consideration of time. But unexpectedly, they all pointed to 2 o’clock. I wonder why I’m partial to 2 o’clock, is my mind live at this lasting moment? So I ask people to draw me a clock, then name the time they drew after them. Every minute, you may meet a person whose ‘mind clock’ was set to that moment.</br></p>
           <div>You can also <a href="view all the clocks.html">view all the clocks here.</a></div><p></p><p></p><p></p>
         </div>
       </div>
 
     <script>
 
-    	// I declared a few global variables. That way you don't have to figure out the time twice. Just once.
+      // I declared a few global variables. That way you don't have to figure out the time twice. Just once.
       var currentTime;
       var currentHours;
       var currentMinutes;
@@ -124,115 +126,118 @@
           document.getElementById("img").src = "image/01.25_Mengjie Liu.jpg";
           document.getElementById("person").innerHTML = "Mengjie Liu";
         }
-        if (dateString == "02:02") {
+        else if (dateString == "02:02") {
           document.getElementById("img").src = "image/02.02_Wenwen Zhang.jpg";
           document.getElementById("person").innerHTML = "Wenwen Zhang";
         }
-        if (dateString == '03:00') {
-          document.getElementById('img').src ='image/03.00_Luiza Dale.jpg'
-          document.getElementById('person').innerHTML = 'Alvin Ashiatey'
+        else if (dateString == "03:00") {
+          document.getElementById('img').src ='image/03.00_Luiza Dale.jpg';
+          document.getElementById('person').innerHTML = 'Alvin Ashiatey';
         }
-        if (dateString == '03:03') {
-          document.getElementById('img').src ='image/03.03_Alvin Ashiatey.jpg'
-          document.getElementById('person').innerHTML = 'Alvin Ashiatey'
+        else if (dateString == "03:03") {
+          document.getElementById('img').src ='image/03.03_Alvin Ashiatey.jpg';
+          document.getElementById('person').innerHTML = 'Alvin Ashiatey';
         }
-        if (dateString == '03:05') {
-          document.getElementById('img').src ='image/03.05_Vera Villanueva.jpg'
-          document.getElementById('person').innerHTML = 'Vera Villanueva'
+        else if (dateString == "03:05") {
+          document.getElementById('img').src ='image/03.05_Vera Villanueva.jpg';
+          document.getElementById('person').innerHTML = 'Vera Villanueva';
         }
-        if (dateString == '03:45') {
-          document.getElementById('img').src ='image/03.45_Yuanbo Wang.jpg'
-          document.getElementById('person').innerHTML = 'Yuanbo Wang'
+        else if (dateString == "03:45") {
+          document.getElementById('img').src ='image/03.45_Yuanbo Wang.jpg';
+          document.getElementById('person').innerHTML = 'Yuanbo Wang';
         }
-        if (dateString == '03:55') {
-          document.getElementById('img').src ='image/03.55_Mengyi Qian.jpg'
-          document.getElementById('person').innerHTML = 'Mengyi Qian'
+        else if (dateString == "03:55") {
+          document.getElementById('img').src ='image/03.55_Mengyi Qian.jpg';
+          document.getElementById('person').innerHTML = 'Mengyi Qian';
         }
-        if (dateString == '03:57') {
-          document.getElementById('img').src ='image/03.57_Qidong Xuan.jpg'
-          document.getElementById('person').innerHTML = 'Qidong Xuan'
+        else if (dateString == "03:57") {
+          document.getElementById('img').src ='image/03.57_Qidong Xuan.jpg';
+          document.getElementById('person').innerHTML = 'Qidong Xuan';
         }
-        if (dateString == '04:00') {
-          document.getElementById('img').src ='image/04.00_Yuan Gao.jpg'+'image/04.00_Sam Wood.jpg'//2 images sametime
-          document.getElementById('person').innerHTML = 'Yuan Gao'+'Sam Wood'
+        else if (dateString == "04:00") {
+          document.getElementById('img').src ='image/04.00_Sam Wood.jpg';
+          document.getElementById('person').innerHTML = 'Sam Wood';
         }
-        if (dateString == '05:00') {
-          document.getElementById('img').src ='image/05.00_Yining Gong.jpg'
-          document.getElementById('person').innerHTML = 'Yining Gong'
+        else if (dateString == "04:01") {
+          document.getElementById('img').src ='image/04.01_Yuan Gao.jpg';
+          document.getElementById('person').innerHTML = 'Yuan Gao';
         }
-        if (dateString == '05:07') {
-          document.getElementById('img').src ='image/05.07_Tyler Bleuel.jpg'
-          document.getElementById('person').innerHTML = 'Tyler Bleuel'
+        else if (dateString == "05:00") {
+          document.getElementById('img').src ='image/05.00_Yining Gong.jpg';
+          document.getElementById('person').innerHTML = 'Yining Gong';
         }
-        if (dateString == '05:08') {
-          document.getElementById('img').src ='image/05.08_Hannah Tjaden.jpg'
-          document.getElementById('person').innerHTML = 'Hannah Tjaden'
+        else if (dateString == "05:07") {
+          document.getElementById('img').src ='image/05.07_Tyler Bleuel.jpg';
+          document.getElementById('person').innerHTML = 'Tyler Bleuel';
         }
-        if (dateString == '05:20') {
-          document.getElementById('img').src ='image/05.20_Mianwei Wang.jpg'
-          document.getElementById('person').innerHTML = 'Mianwei Wang'
+        else if (dateString == "05:08") {
+          document.getElementById('img').src ='image/05.08_Hannah Tjaden.jpg';
+          document.getElementById('person').innerHTML = 'Hannah Tjaden';
         }
-        if (dateString == '06:00') {
-          document.getElementById('img').src ='image/06.00_Jinu Hong.jpg'
-          document.getElementById('person').innerHTML = 'Jinu Hong'
+        else if (dateString == "05:20") {
+          document.getElementById('img').src ='image/05.20_Mianwei Wang.jpg';
+          document.getElementById('person').innerHTML = 'Mianwei Wang';
         }
-        if (dateString == '06:20') {
-          document.getElementById('img').src ='image/06.20_Tianci Zou.jpg'
-          document.getElementById('person').innerHTML = 'Tianci Zou'
+        else if (dateString == "06:00") {
+          document.getElementById('img').src ='image/06.00_Jinu Hong.jpg';
+          document.getElementById('person').innerHTML = 'Jinu Hong';
         }
-        if (dateString == '07:00') {
-          document.getElementById('img').src ='image/07.00_Cat Wentworth.jpg'
-          document.getElementById('person').innerHTML = 'Cat Wentworth'
+        else if (dateString == "06:20") {
+          document.getElementById('img').src ='image/06.20_Tianci Zou.jpg';
+          document.getElementById('person').innerHTML = 'Tianci Zou';
         }
-        if (dateString == '07:45') {
-          document.getElementById('img').src ='image/07.45_Nick Massarelli.jpg'
-          document.getElementById('person').innerHTML = 'Nick Massarelli'
+        else if (dateString == "07:00") {
+          document.getElementById('img').src ='image/07.00_Cat Wentworth.jpg';
+          document.getElementById('person').innerHTML = 'Cat Wentworth';
         }
-        if (dateString == '08:20') {
-          document.getElementById('img').src ='image/08.20_Kitty Kan.jpg'
-          document.getElementById('person').innerHTML = 'Kitty Kan'
+        else if (dateString == "07:45") {
+          document.getElementById('img').src ='image/07.45_Nick Massarelli.jpg';
+          document.getElementById('person').innerHTML = 'Nick Massarelli';
         }
-        if (dateString == '08:28') {
-          document.getElementById('img').src ='image/08.28_Xi Chen.jpg'
-          document.getElementById('person').innerHTML = 'Xi Chen'
+        else if (dateString == "08:20") {
+          document.getElementById('img').src ='image/08.20_Kitty Kan.jpg';
+          document.getElementById('person').innerHTML = 'Kitty Kan';
         }
-        if (dateString == '08:50') {
-          document.getElementById('img').src ='image/08.50_Tuan Pham.jpg'
-          document.getElementById('person').innerHTML = 'Tuan Pham'
+        else if (dateString == "08:28") {
+          document.getElementById('img').src ='image/08.28_Xi Chen.jpg';
+          document.getElementById('person').innerHTML = 'Xi Chen';
         }
-        if (dateString == '10:05') {
-          document.getElementById('img').src ='image/10.05_Herdimas Anggara.jpg'
-          document.getElementById('person').innerHTML = 'Herdimas Anggara'
+        else if (dateString == "08:50") {
+          document.getElementById('img').src ='image/08.50_Tuan Pham.jpg';
+          document.getElementById('person').innerHTML = 'Tuan Pham';
         }
-        if (dateString == '10:06') {
-          document.getElementById('img').src ='image/10.06_Hao Xu.jpg'
-          document.getElementById('person').innerHTML = 'Hao Xu'
+        else if (dateString == "10:05") {
+          document.getElementById('img').src ='image/10.05_Herdimas Anggara.jpg';
+          document.getElementById('person').innerHTML = 'Herdimas Anggara';
         }
-        if (dateString == '10:10') {
-          document.getElementById('img').src ='image/10.10_Tantan Wang.jpg'
-          document.getElementById('person').innerHTML = 'Tantan Wang'
+        else if (dateString == "10:06") {
+          document.getElementById('img').src ='image/10.06_Hao Xu.jpg';
+          document.getElementById('person').innerHTML = 'Hao Xu';
         }
-        if (dateString == '11:40') {
-          document.getElementById('img').src ='image/11.40_Avery Youngblood.jpg'
-          document.getElementById('person').innerHTML = 'Avery Youngblood'
+        else if (dateString == "10:10") {
+          document.getElementById('img').src ='image/10.10_Tantan Wang.jpg';
+          document.getElementById('person').innerHTML = 'Tantan Wang';
         }
-        if (dateString == '12:15') {
-          document.getElementById('img').src ='image/12.15_Sophie Zhang.jpg'
-          document.getElementById('person').innerHTML = 'Sophie Zhang'
+        else if (dateString == "11:40") {
+          document.getElementById('img').src ='image/11.40_Avery Youngblood.jpg';
+          document.getElementById('person').innerHTML = 'Avery Youngblood';
         }
-        if (dateString == '12:23') {
-          document.getElementById('img').src ='image/12.23_M.C. Madrigal.jpg'
-          document.getElementById('person').innerHTML = 'M.C. Madrigal'
+        else if (dateString == "12:15") {
+          document.getElementById('img').src ='image/12.15_Sophie Zhang.jpg';
+          document.getElementById('person').innerHTML = 'Sophie Zhang';
         }
-        if (dateString == '12:28') {
-          document.getElementById('img').src ='image/12.28_ Monique Baltzer.jpg'
-          document.getElementById('person').innerHTML = 'Monique Baltzer'
+        else if (dateString == "12:23") {
+          document.getElementById('img').src ='image/12.23_M.C. Madrigal.jpg';
+          document.getElementById('person').innerHTML = 'M.C. Madrigal';
+        }
+        else if (dateString == "12:28") {
+          document.getElementById('img').src ='image/12.28_Monique Baltzer.jpg';
+          document.getElementById('person').innerHTML = 'Monique Baltzer';
         }
  
- 		// I added this else clause here. Basically, if the dateString does not match one of your specified times, it clears the image and the name to take it away.
+    // I added this else clause here. Basically, if the dateString does not match one of your specified times, it clears the image and the name to take it away.
         else {
-          document.getElementById("img").src =
-            " ";
+          document.getElementById("img").src = "image/error.png";
           document.getElementById("person").innerHTML = " ";
         }
       }

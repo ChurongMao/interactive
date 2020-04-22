@@ -4,24 +4,96 @@
 <head>
     <title>Churong Mao</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="assets/main.css" type="text/css" />
 </head>
+<style>
+ *{
+  box-sizing: border-box;
+ } 
+
+ body{
+  font-family: Helvetica, Arial, sans-serif;
+ } 
+ 
+ .header {
+  padding: 30px;
+  text-align: left;
+ }
+ .container{
+   display: inline-flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   width: 100vw;
+ }
+ .item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ img{
+  width: 500px;
+  margin: 15px;
+  transition-duration: 0.5s;
+ }
+ img:hover{
+  width: 550px;
+  margin: -10px;
+ }
+ .title-top{
+  width: 500px;
+  text-align: center;
+  position: fixed;
+  top: 420px;
+ }
+
+ .title-bottom{
+  width: 500px;
+  text-align: center;
+  position: fixed;
+  top: 840px;
+ }
+
+
+
+</style>
 
 <body>
 
-  <h1>Churong Mao</h1>
+<div class="header"></div>
 
-  <h2>Exercises</h2>
-  <ul>
-    <li><a href="websites_are/websites_are.html">Website Are</a></li>
-    <li><a href="responsive.html">Media Queries</li>
-  </ul>
+<div class="container">
+  
+  <div class="item">
+    <a href="websites_are/websites_are.html" target="_blank"><img src="homepage/websites are.png"></a>
+    <div class="title-top">Website Are</div>
+  </div>
+ 
+  <div class="item">
+    <a href="responsive.html" target="_blank"><img src="homepage/responsive.png"></a>
+    <div class="title-top">Media Queries</div>
+  </div>
+  
+  <div class="item">
+    <a href="ambient.html" target="_blank"><img src="homepage/ambient.png"></a>
+    <div class="title-top">Ambient</div>
+  </div>
+</div>
 
-  <h2>Projects</h2>
-  <ul>
-  	<li><a href="list/list_index.html">The list</a></li>
-    <li><a href="clock/clock.html">The clock</a></li>
-  </ul>
+<div class="header"></div>
+
+<div class="container">
+  	<div class="item">
+      <a href="list/list_index.html" target="_blank"><img src="homepage/list.png"></a>
+      <div class="title-bottom">The List</div>
+    </div>
+    <div class="item">
+      <a href="clock/clock.html" target="_blank"><img src="homepage/clock.png"></a>
+      <div class="title-bottom">The Clock</div>
+    </div>
+    <div class="item">
+      <a href="window/window.html" target="_blank"><img src="homepage/window.png"></a>
+      <div class="title-bottom">The Window</div>
+    </div>
+</div>
 
 </body>
 	

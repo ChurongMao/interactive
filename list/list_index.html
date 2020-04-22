@@ -8,24 +8,29 @@
 <style>
 	div{
 		font-family: monospace;
-		font-size: 16px;
+		font-size: 20px;
 	}
 	
 	div.title>div{display: inline;}
 	div.foot>div{display: inline;}
-	div.list>div{display: inline;}	
-	
+	div.list>div{display: inline;}		
 	div.foot{
 		position: absolute;
 		bottom: 0px;
 		left: 6px;
 	}
-	div.list{
-		position: relative;
-		left: 38vw;
-		top: 30vh;
-		overflow: hidden;
+
+	div.container{
+		position: absolute;
+		top: 50vh;
+		left: 50vw;
+     	-webkit-transform: translateX(-50%) translateY(-50%);
+  		-moz-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-o-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
 	}
+
 
 	div.green{color: green;}
 	div.red{color: deeppink;}
@@ -42,8 +47,8 @@
 	}
 
 	a:visited{
-		color: blueviolet;
-		text-decoration: line-through solid black;
+		color: green;
+		
 	}
 
 </style>
@@ -56,6 +61,7 @@
 		&lt;<div class="red">html</div>&gt;
 	</div>
 <br></br>
+	<div class="container">
 		<div class="list">
 			<div class="red">level</div><div class="green">.1</div>
 				<span>{</span>
@@ -110,6 +116,7 @@
 					<a href="list_5.5.html">5;</a>
 				<span>}</span><div class="green"> /* html + css */</div>
 		</div>
+	</div>
 	<div class="foot"> &lt;/<div class="red">html</div>&gt;</div>
 </body>
 </html>
